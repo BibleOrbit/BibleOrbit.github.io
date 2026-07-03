@@ -80,6 +80,74 @@
         line-height: 1.7;
       }
 
+      .quote-rotator {
+        position: relative;
+        margin-top: 2rem;
+        padding: 1.25rem 1.35rem 1.15rem;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        background: rgba(17, 24, 39, 0.72);
+        box-shadow: 0 1.25rem 3.5rem rgba(0, 0, 0, 0.18);
+      }
+
+      .quote-rotator::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        pointer-events: none;
+      }
+
+      .quote-text {
+        min-height: 5.7rem;
+        margin: 0;
+        color: var(--text);
+        font-size: clamp(1.08rem, 2vw, 1.32rem);
+        font-weight: 700;
+        line-height: 1.55;
+        transition: opacity 220ms ease;
+      }
+
+      .quote-author {
+        margin-top: 0.85rem;
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .quote-progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0.18rem;
+        background: rgba(148, 163, 184, 0.18);
+      }
+
+      .quote-progress span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #f4d14a, #b88f00);
+        transform-origin: left center;
+        animation-name: quote-progress;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes quote-progress {
+        from {
+          transform: scaleX(1);
+        }
+
+        to {
+          transform: scaleX(0);
+        }
+      }
+
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -118,6 +186,17 @@
         color: #8fa1bb;
         font-size: 0.9rem;
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        .quote-text {
+          transition: none;
+        }
+
+        .quote-progress span {
+          animation: none;
+          transform: scaleX(1);
+        }
+      }
     </style>
   </head>
   <body>
@@ -128,6 +207,11 @@
         Bible Orbit helps believers cultivate a lifelong rhythm in Scripture by keeping Christ
         at the center and the whole canon in view.
       </p>
+      <section class="quote-rotator" aria-label="Scripture reading quote">
+        <p class="quote-text" data-quote-text aria-live="polite"></p>
+        <div class="quote-author" data-quote-author></div>
+        <div class="quote-progress" aria-hidden="true"><span data-quote-progress></span></div>
+      </section>
       <div class="actions">
         <a class="button primary" href="/app/" data-open-app>Open App</a>
         <a class="button" href="/app/?admin=1">Open Admin Portal</a>
@@ -166,6 +250,156 @@
         openAppButton.addEventListener("click", syncAppUrl);
         window.addEventListener("resize", syncAppUrl);
         syncAppUrl();
+      })();
+
+      (() => {
+        const historicQuotes = [
+          {
+            author: "Charles H. Spurgeon",
+            quote: "A Bible that is falling apart usually belongs to someone who isn't."
+          },
+          {
+            author: "Matthew Henry",
+            quote: "Those who would have clear views of divine truth must acquaint themselves with the whole Scripture."
+          },
+          {
+            author: "John Bunyan",
+            quote: "Read the Bible, and read it again and again."
+          },
+          {
+            author: "D. L. Moody",
+            quote: "The Bible was not given for our information but for our transformation."
+          },
+          {
+            author: "George Müller",
+            quote: "The vigor of our spiritual life will be in exact proportion to the place held by the Bible in our life and thoughts."
+          },
+          {
+            author: "J. C. Ryle",
+            quote: "Knowledge of the Bible never comes by intuition. It can only be obtained by diligent, regular, daily, attentive reading."
+          },
+          {
+            author: "John Wesley",
+            quote: "I am a creature of a day... I want to know one thing—the way to heaven... God Himself has condescended to teach the way: for this very end He came from heaven. He hath written it down in a book."
+          },
+          {
+            author: "Martin Luther",
+            quote: "The Bible is alive; it speaks to me."
+          },
+          {
+            author: "William Tyndale",
+            quote: "God's Word is the foundation of all truth."
+          },
+          {
+            author: "A. W. Pink",
+            quote: "The Scriptures are the only source of spiritual knowledge."
+          },
+          {
+            author: "John Calvin",
+            quote: "Scripture is the school of the Holy Spirit."
+          },
+          {
+            author: "Jerome",
+            quote: "Ignorance of Scripture is ignorance of Christ."
+          }
+        ];
+
+        const orbitQuotes = [
+          {
+            author: "BibleOrbit",
+            quote: "One chapter takes about the same time as a typical song."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Six chapters each day. One complete revolution through Scripture in about six months."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Two complete revolutions of the Bible every year."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Scripture interprets Scripture when every stream is read together."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Christ is the center. Every stream leads back to Him."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Read the whole counsel of God—not just your favorite passages."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "Small daily disciplines become lifelong faithfulness."
+          },
+          {
+            author: "BibleOrbit",
+            quote: "A revolution through Scripture begins with today's reading."
+          }
+        ];
+
+        const quotes = [...historicQuotes, ...orbitQuotes];
+        const quoteText = document.querySelector("[data-quote-text]");
+        const quoteAuthor = document.querySelector("[data-quote-author]");
+        const quoteProgress = document.querySelector("[data-quote-progress]");
+        if (!quoteText || !quoteAuthor || !quoteProgress || !quotes.length) return;
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const readStoredQuoteIndex = () => {
+          try {
+            return window.localStorage.getItem("orbitLandingQuoteIndex") || "0";
+          } catch {
+            return "0";
+          }
+        };
+        const storeNextQuoteIndex = (index) => {
+          try {
+            window.localStorage.setItem("orbitLandingQuoteIndex", String(index));
+          } catch {
+            return;
+          }
+        };
+
+        let quoteIndex = Number.parseInt(readStoredQuoteIndex(), 10);
+        if (!Number.isFinite(quoteIndex) || quoteIndex < 0) quoteIndex = 0;
+        let timeoutId = 0;
+
+        const getReadDuration = (quote) => {
+          const wordCount = quote.trim().split(/\s+/).filter(Boolean).length;
+          return Math.min(22000, Math.max(9000, wordCount * 430));
+        };
+
+        const renderQuote = () => {
+          const quote = quotes[quoteIndex % quotes.length];
+          const duration = getReadDuration(quote.quote);
+          quoteText.style.opacity = "0";
+
+          window.setTimeout(() => {
+            quoteText.textContent = `“${quote.quote}”`;
+            quoteAuthor.textContent = quote.author;
+            quoteText.style.opacity = "1";
+            quoteProgress.style.animation = "none";
+            if (!reduceMotion) {
+              quoteProgress.offsetHeight;
+              quoteProgress.style.animation = `quote-progress ${duration}ms linear forwards`;
+            }
+          }, 180);
+
+          storeNextQuoteIndex((quoteIndex + 1) % quotes.length);
+          quoteIndex = (quoteIndex + 1) % quotes.length;
+          timeoutId = window.setTimeout(renderQuote, duration);
+        };
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            window.clearTimeout(timeoutId);
+            return;
+          }
+          renderQuote();
+        });
+
+        renderQuote();
       })();
     </script>
   </body>
