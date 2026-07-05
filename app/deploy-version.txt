@@ -1,0 +1,3 @@
+Bible Orbit app deploy marker
+commit: 4514c2b
+forced-pages-refresh: 2026-07-05T22:27:06Z
