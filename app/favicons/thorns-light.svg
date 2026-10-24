@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+ <rect width="240" height="240" rx="28" fill="#FCFDFB"/>
+ <g color="#304B58" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M116 36C151 22 190 48 199 85C221 113 203 157 182 182C157 209 117 214 86 197C48 190 28 154 37 118C25 83 53 47 86 41C97 31 106 33 116 36Z" stroke-width="3.5"/>
+  <path d="M116 29C157 39 185 39 195 78C205 104 214 135 193 164C185 196 145 202 119 204C84 208 61 189 44 161C26 134 38 103 41 81C54 48 91 25 116 29Z" stroke-width="2.1"/>
+  <path d="M76 45C106 45 127 24 158 42C180 56 204 70 198 103C194 130 209 153 180 179C150 193 134 211 103 198C73 189 44 190 39 153C40 126 25 103 50 75C58 60 62 51 76 45Z" stroke-width="1.5"/>
+  <polygon points="115.20,40.14 135.69,16.18 124.40,40.12" fill="currentColor" stroke-width=".6"/>
+  <polygon points="137.77,37.90 145.46,63.47 147.08,40.48" fill="currentColor" stroke-width=".6"/>
+  <polygon points="161.13,42.20 193.76,31.77 169.79,47.44" fill="currentColor" stroke-width=".6"/>
+  <polygon points="175.09,61.99 206.59,60.60 181.38,68.69" fill="currentColor" stroke-width=".6"/>
+  <polygon points="192.13,76.95 224.13,84.56 196.59,85.51" fill="currentColor" stroke-width=".6"/>
+  <polygon points="204.93,96.96 181.91,116.60 207.01,106.86" fill="currentColor" stroke-width=".6"/>
+  <polygon points="200.00,120.66 222.51,142.74 199.39,129.84" fill="currentColor" stroke-width=".6"/>
+  <polygon points="200.69,143.33 216.98,171.91 197.48,152.44" fill="currentColor" stroke-width=".6"/>
+  <polygon points="194.81,166.35 202.99,199.61 188.99,174.62" fill="currentColor" stroke-width=".6"/>
+  <polygon points="174.12,178.92 151.50,173.40 167.00,184.74" fill="currentColor" stroke-width=".6"/>
+  <polygon points="158.03,194.90 148.25,226.31 149.18,198.77" fill="currentColor" stroke-width=".6"/>
+  <polygon points="137.19,206.30 118.46,234.99 127.17,207.71" fill="currentColor" stroke-width=".6"/>
+  <polygon points="113.88,199.77 90.32,220.72 104.77,198.54" fill="currentColor" stroke-width=".6"/>
+  <polygon points="91.21,198.91 87.08,172.54 82.35,195.09" fill="currentColor" stroke-width=".6"/>
+  <polygon points="68.66,191.47 34.91,197.36 60.80,185.11" fill="currentColor" stroke-width=".6"/>
+  <polygon points="57.53,169.97 26.13,167.05 52.21,162.47" fill="currentColor" stroke-width=".6"/>
+  <polygon points="42.68,152.83 12.01,140.93 39.42,143.74" fill="currentColor" stroke-width=".6"/>
+  <polygon points="32.72,131.26 58.21,114.94 32.01,121.17" fill="currentColor" stroke-width=".6"/>
+  <polygon points="40.84,108.45 21.54,83.51 42.69,99.44" fill="currentColor" stroke-width=".6"/>
+  <polygon points="43.23,85.90 30.99,55.37 47.65,77.31" fill="currentColor" stroke-width=".6"/>
+  <polygon points="52.20,63.90 48.63,29.83 59.09,56.49" fill="currentColor" stroke-width=".6"/>
+  <polygon points="74.41,54.26 96.06,62.81 82.25,49.46" fill="currentColor" stroke-width=".6"/>
+  <polygon points="92.53,40.62 106.48,10.83 101.82,37.99" fill="currentColor" stroke-width=".6"/>
+  <path d="M120 76v91M91 108h58" stroke-width="9" stroke-linecap="square"/>
+ </g>
+</svg>
