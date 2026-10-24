@@ -18,7 +18,8 @@
         --text: #f8fafc;
         --muted: #bac7d8;
         --soft: #d7dfeb;
-        --gold: #f0c433;
+        --accent: #cbd5e1;
+        --on-accent: #111722;
         --border: rgba(148, 163, 184, 0.24);
       }
 
@@ -31,7 +32,7 @@
         min-height: 100vh;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(circle at top, rgba(240, 196, 51, 0.12), transparent 30rem),
+          radial-gradient(circle at top, rgba(148, 163, 184, 0.12), transparent 30rem),
           var(--bg);
         color: var(--text);
       }
@@ -48,7 +49,7 @@
 
       nav a,
       a {
-        color: var(--gold);
+        color: var(--accent);
         font-weight: 750;
       }
 
@@ -61,7 +62,7 @@
       }
 
       .eyebrow {
-        color: var(--gold);
+        color: var(--accent);
         font-size: 0.78rem;
         font-weight: 850;
         letter-spacing: 0.12em;
@@ -104,9 +105,9 @@
       .contact-card {
         margin: 1.5rem 0;
         padding: 1rem;
-        border: 1px solid rgba(240, 196, 51, 0.28);
+        border: 1px solid rgba(148, 163, 184, 0.28);
         border-radius: 0.6rem;
-        background: rgba(240, 196, 51, 0.08);
+        background: rgba(148, 163, 184, 0.08);
       }
 
       .actions {
@@ -122,16 +123,16 @@
         justify-content: center;
         min-height: 2.75rem;
         padding: 0.75rem 1rem;
-        border: 1px solid rgba(240, 196, 51, 0.42);
+        border: 1px solid rgba(148, 163, 184, 0.42);
         border-radius: 0.55rem;
-        color: #080d17;
-        background: linear-gradient(135deg, #f5d44e, #c79608);
+        color: var(--on-accent);
+        background: var(--accent);
         font-weight: 850;
         text-decoration: none;
       }
 
       .button.secondary {
-        color: var(--gold);
+        color: var(--accent);
         background: rgba(17, 24, 39, 0.38);
       }
 
@@ -142,6 +143,8 @@
           --text: #101827;
           --muted: #43536a;
           --soft: #1e293b;
+          --accent: #111317;
+          --on-accent: #ffffff;
           --border: rgba(30, 41, 59, 0.16);
         }
 
