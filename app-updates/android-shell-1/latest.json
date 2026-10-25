@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "channel": "android-shell-1",
-  "bundleId": "9bbf1e41f792e5d69d4e7234fa3544952a811f63f902b26ba0064991a31e9f72",
-  "url": "https://bibleorbit.org/app-updates/android-shell-1/9bbf1e41f792e5d69d4e7234fa3544952a811f63f902b26ba0064991a31e9f72.zip",
-  "checksum": "8ce24facaa5b46dfb8856da2f2cf95b8568ad3d14bfb24b238f4007aab36d807",
-  "signature": "KCT2mSljs874zVKQLXIT+RHtpunKC2IWIpdvjhoecYDW60UAcyWMt70AbeTgDplourTMnJwTfKoOmzUZlpYma3Kfdun+u+Bs7qGtdg/qFdGT9AZtF4vPxnSWCvUnA1SkJAtQVUre6jogDY+FdUqyo6Sh75gxnJkvrInieW7IX/Tc4W4YpdhXGUQCDXD/b62KYoff18t24CSIPm1JDwTVBxftUTWZd/LX61JhyMhiQ7o0c2aCJ98iNLwMedQ4CNfpzLH7V97Lfrs4Hl3T7nKRuFz2Olu39+edWgQFUipoET6lHLhIo5ggo3zDJ9/MQdIi8SC1oIYKYclmlPDpBmEVGqo8HSDgsAhshSpJ+3pCjmqvZHr9Jbn/71+dfdydTguPl2dOqOme3UaX1gileR8ZIQCfK5yBrP7YoK1weNqpE/lTHGEN+bvTeO3jLICthNtlW0zEQN5fS2pbhbI/PCRGrxS6XTqyn7H6dAt9VJv7lZeKUl0IwsId3+OrTCXImGqC",
+  "bundleId": "b61f242a42b7acd1da058649d598881c084c02a00bc9d3c88fd279be968c9ea7",
+  "url": "https://bibleorbit.org/app-updates/android-shell-1/b61f242a42b7acd1da058649d598881c084c02a00bc9d3c88fd279be968c9ea7.zip",
+  "checksum": "3f4a570bf0688ef9704d8e329b0f27592980129b3811176ab2979007824b9f91",
+  "signature": "vFElAnjsQLGTMEMvq9kQ3esXnx2ttMpmSV8JKuDcX1i9hmGVn4dvOEpN+MHhfjLrmZo3qR8GMaNN0tveHP3ulBYllR4M3br0pe77pqpsJppVBELA6AVRObdaiicGO6aaODJuEfGmKib2hkEO1DmIxt1sR2ztOxlVd7kuf/yPBSut4kz2d9dPzFS1fIn/zTZ9Y2G/gI4Ytn7T0z6Gj3M323ZdulcB9mr1pG1gwxA/i6pipjLha7tQWI61uL354pCtYnX+iAvLYVAl6tl5LKfEE+ZpkTUQU2v6U4UPmAUWgtOM7hFafMrRj7OPbMpk/PDxa6ydFuDIVtpZbXJz5qkzBFW4KcQSU00CrhEx1BBTAub9K4ginpAYRh1/DXN1CCcvnxmGU3AipbEBLX5EWc2Dt4LRAjv9q2SrEAwYgzdxjs4Zk/2mTSz0WSiVCSjapE0lm93IGjKHMpETZh6CudtnLNmmrj01/DlK6jI3MH1T/R/QI5oMxj2kvwP5XpQ96jOf",
   "minimumVersionCode": 8
 }
