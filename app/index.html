@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Restore appearance before styles paint, not after React mounts.
+      try {
+        var savedProfile = JSON.parse(localStorage.getItem('sc_user') || 'null');
+        var savedTheme = (savedProfile && savedProfile.preferredTheme) || localStorage.getItem('sc_theme');
+        var initialTheme = savedTheme === 'light' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = initialTheme;
+        document.documentElement.style.colorScheme = initialTheme;
+      } catch (_) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
     <link id="browser-favicon" rel="icon" type="image/png" sizes="192x192" href="/app/favicon-192x192.png?v=20261024-2" />
     <link rel="apple-touch-icon" href="/app/apple-touch-icon.png?v=20261024-2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
